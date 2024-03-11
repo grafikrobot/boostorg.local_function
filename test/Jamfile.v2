@@ -13,6 +13,8 @@ project :
     <toolset>sun:<define>BOOST_TYPEOF_EMULATION
     <toolset>gcc:<cxxflags>-Wno-unused-local-typedefs
     <toolset>clang:<cxxflags>-Wno-unused-local-typedefs
+    <source>/boost/concept_check//boost_concept_check
+    <source>/boost/functional//boost_functional
     ;
 
 rule vaseq ( command target )
