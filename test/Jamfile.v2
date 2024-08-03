@@ -10,6 +10,7 @@ import testing ;
 # Sun does not automatically detect type-of emulation mode (force it).
 project :
   requirements
+    <library>/boost/local_function//boost_local_function
     <toolset>sun:<define>BOOST_TYPEOF_EMULATION
     <toolset>gcc:<cxxflags>-Wno-unused-local-typedefs
     <toolset>clang:<cxxflags>-Wno-unused-local-typedefs
