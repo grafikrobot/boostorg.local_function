@@ -19,7 +19,7 @@ project :
 run add_cxx11_lambda.cpp ;
 run add_global_functor.cpp ;
 run add_local_functor.cpp ;
-run add_phoenix.cpp : : : <library>/boost/spirit//boost_spirit ;
+run add_phoenix.cpp : : : <library>/boost/phoenix//boost_phoenix ;
 
 run const_block.cpp ;
 compile-fail const_block_error.cpp : <variant>debug ;
