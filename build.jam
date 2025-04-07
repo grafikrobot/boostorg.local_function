@@ -15,12 +15,11 @@ constant boost_dependencies :
     /boost/utility//boost_utility ;
 
 project /boost/local_function
-    : common-requirements
-        <include>include
     ;
 
 explicit
-    [ alias boost_local_function : : : : <library>$(boost_dependencies) ]
+    [ alias boost_local_function : : :
+        : <include>include <library>$(boost_dependencies) ]
     [ alias all : boost_local_function example test ]
     ;
 
