@@ -12,8 +12,8 @@ path-constant images_location : html ;
 path-constant here : . ;
 
 doxygen reference
-    :   ../../../boost/local_function.hpp
-        ../../../boost/local_function/config.hpp
+    :   ../include/boost/local_function.hpp
+        ../include/boost/local_function/config.hpp
     :   <reftitle>"Reference"
         <doxygen:param>PREDEFINED="DOXYGEN"
         <doxygen:param>QUIET=YES

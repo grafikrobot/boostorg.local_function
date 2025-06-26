@@ -10,6 +10,7 @@ import testing ;
 # Sun does not automatically detect type-of emulation mode (force it).
 project :
   requirements
+    <library>/boost/local_function//boost_local_function
     <toolset>sun:<define>BOOST_TYPEOF_EMULATION
     <toolset>gcc:<cxxflags>-Wno-unused-local-typedefs
     <toolset>clang:<cxxflags>-Wno-unused-local-typedefs
@@ -18,7 +19,7 @@ project :
 run add_cxx11_lambda.cpp ;
 run add_global_functor.cpp ;
 run add_local_functor.cpp ;
-run add_phoenix.cpp ;
+run add_phoenix.cpp : : : <library>/boost/phoenix//boost_phoenix ;
 
 run const_block.cpp ;
 compile-fail const_block_error.cpp : <variant>debug ;
@@ -43,8 +44,8 @@ run n2550_find_if.cpp ;
 compile-fail noncopyable_cxx11_lambda_error.cpp ;
 run noncopyable_local_function.cpp ;
 
-run phoenix_factorial.cpp ;
-run phoenix_factorial_local.cpp ;
+run phoenix_factorial.cpp : : : <library>/boost/phoenix//boost_phoenix ;
+run phoenix_factorial_local.cpp : : : <library>/boost/phoenix//boost_phoenix ;
 
 # Only compile but do not run profiling programs (they take a long time to run).
 exe profile_global_functor : profile_global_functor.cpp
@@ -75,8 +76,9 @@ exe profile_local_functor : profile_local_functor.cpp
 exe profile_phoenix : profile_phoenix.cpp
     :   <library>/boost/chrono//boost_chrono
         <library>/boost/system//boost_system
+        <library>/boost/phoenix//boost_phoenix
         <link>static
     ;
 
-run scope_exit.cpp ;
+run scope_exit.cpp : : : <library>/boost/foreach//boost_foreach ;
 
